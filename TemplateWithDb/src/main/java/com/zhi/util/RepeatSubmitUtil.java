@@ -11,14 +11,14 @@ import java.util.TreeMap;
 
 @Slf4j
 public class RepeatSubmitUtil {
-    public static String digestParamMD5(String paramJson, String... excluedKey) {
+    public static String digestParamMD5(String paramJson, String... excludeKey) {
         String digestMD5 = paramJson;
         TreeMap paramTreeMap = JSON.parseObject(paramJson, TreeMap.class);
-        if(excluedKey != null) {
-            List<String> excludeKeyList = Arrays.asList(excluedKey);
+        if(excludeKey != null) {
+            List<String> excludeKeyList = Arrays.asList(excludeKey);
             if(!excludeKeyList.isEmpty()) {
-                for (String excludeKey : excludeKeyList) {
-                    paramTreeMap.remove(excludeKey);
+                for (String key : excludeKeyList) {
+                    paramTreeMap.remove(key);
                 }
             }
         }
