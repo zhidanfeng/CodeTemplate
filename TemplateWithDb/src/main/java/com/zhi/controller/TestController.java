@@ -33,6 +33,11 @@ public class TestController {
         return this.testService.sayHi(words);
     }
 
+    /**
+     * 防止重复提交
+     * @param form
+     * @return
+     */
     @PostMapping("/repeatSubmit")
     public String repeatSubmit(@RequestBody RepeatSubmitForm form) {
         form.setTime(DateUtil.current());
@@ -41,8 +46,8 @@ public class TestController {
         String md5_1 = RepeatSubmitUtil.digestParamMD5(json_1, "time");
         System.out.println(md5_1);
 
-        String key = "dedup:U=" + 1L + "M=" + "method" + "P=" + md5_1;
-        long expireTime =  5000;// 1000毫秒过期，1000ms内的重复请求会认为重复
+        String key = "repeat:U=" + 1L + "M=" + "method" + "P=" + md5_1;
+        long expireTime = 5000;// 1000毫秒过期，1000ms内的重复请求会认为重复
         long expireAt = System.currentTimeMillis() + expireTime;
         String val = "expireAt@" + expireAt;
         if (this.redisUtil.setNx(key, val, expireTime)) {
