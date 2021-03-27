@@ -21,4 +21,9 @@ public class UserController {
     public List<User> listAll() {
         return this.userService.listAll();
     }
+
+    @GetMapping("/add")
+    public void addUser(User user) {
+        //return this.userService.addUser(user);
+    }
 }
