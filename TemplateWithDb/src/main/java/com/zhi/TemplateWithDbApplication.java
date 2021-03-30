@@ -5,10 +5,10 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-@MapperScan({"com.zhi.dao"})
-public class MainApplication {
+@MapperScan({"com.zhi.dao", "com.zhi.operationlog.dao"})
+public class TemplateWithDbApplication {
     public static void main(String[] args) {
-        SpringApplication.run(MainApplication.class, args);
+        SpringApplication.run(TemplateWithDbApplication.class, args);
         System.out.println("TemplateWithDb Application Is Started...");
     }
 }
