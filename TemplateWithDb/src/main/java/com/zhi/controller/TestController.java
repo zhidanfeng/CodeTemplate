@@ -68,6 +68,6 @@ public class TestController {
         long expireAt = System.currentTimeMillis() + expireTime;
         String val = "expireAt@" + expireAt;
         // key设置失败则代表已经存在，说明是重复请求
-        return !this.redisUtil.setNx(key, val, expireTime);
+        return !this.redisUtil.setNX(key, val, expireTime);
     }
 }

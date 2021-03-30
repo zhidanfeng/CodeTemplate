@@ -5,9 +5,10 @@ spring:
     name: demo
   datasource:
     druid:
-      url: jdbc:p6spy:mysql://10.0.2.108:3306/test_nextop?useUnicode=true&characterEncoding=UTF-8
-      username: ops
-      password: jS0rarzFQIltwJCC
+      #url: jdbc:p6spy:mysql://10.0.2.108:3306/test_nextop?useUnicode=true&characterEncoding=UTF-8
+      url: jdbc:p6spy:mysql://localhost:3306/test_db?useUnicode=true&characterEncoding=UTF-8
+      username: root
+      password: Myhome199366@
       driver-class-name: com.p6spy.engine.spy.P6SpyDriver
       test-on-borrow: false
       test-on-return: false
