@@ -14,6 +14,6 @@ public class TestServiceImpl implements TestService {
 
     @Override
     public String sayHi(String words) {
-        return "you say：" + this.testDao.sayHi(words);
+        return "name is：" + this.testDao.sayHi(words);
     }
 }
