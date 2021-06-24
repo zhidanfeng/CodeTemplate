@@ -4,5 +4,5 @@ import lombok.Data;
 
 @Data
 public class WalmartListing extends BaseListing {
-    private String walmartField;
+    private String amazonField;
 }
