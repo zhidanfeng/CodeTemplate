@@ -20,4 +20,11 @@ public class User extends BaseEntity implements Serializable {
 
     @TableField("user_name")
     private String userName;
+
+    public User() {
+    }
+
+    public User(String userName) {
+        this.userName = userName;
+    }
 }
