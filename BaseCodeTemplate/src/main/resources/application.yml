@@ -5,9 +5,13 @@ spring:
     name: demo
   datasource:
     druid:
-      url: jdbc:p6spy:mysql://192.168.1.104:3306/mysql?useUnicode=true&characterEncoding=UTF-8&serverTimezone=Asia/Shanghai
-      username: root
-      password: 123456
+#      url: jdbc:p6spy:mysql://192.168.1.104:3306/mysql?useUnicode=true&characterEncoding=UTF-8&serverTimezone=Asia/Shanghai
+#      username: root
+#      password: 123456
+#      driver-class-name: com.p6spy.engine.spy.P6SpyDriver
+      url: jdbc:p6spy:mysql://rm-wz9i165ek36246t6m.mysql.rds.aliyuncs.com:3306/nextop?useUnicode=true&characterEncoding=UTF-8&allowMultiQueries=true
+      username: nextop
+      password: Max0gl1Daup0nUR6
       driver-class-name: com.p6spy.engine.spy.P6SpyDriver
       test-on-borrow: false
       test-on-return: false

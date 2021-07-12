@@ -1,0 +1,12 @@
+Java HotSpot(TM) 64-Bit Server VM (25.65-b01) for windows-amd64 JRE (1.8.0_65-b17), built on Oct  6 2015 16:39:20 by "java_re" with MS VC++ 10.0 (VS2010)
+Memory: 4k page, physical 16169632k(6451548k free), swap 21412512k(3984144k free)
+CommandLine flags: -XX:+HeapDumpOnOutOfMemoryError -XX:InitialHeapSize=20971520 -XX:MaxHeapSize=20971520 -XX:MaxNewSize=10485760 -XX:MaxTenuringThreshold=15 -XX:NewSize=10485760 -XX:OldPLABSize=16 -XX:PretenureSizeThreshold=3145728 -XX:+PrintGC -XX:+PrintGCDetails -XX:+PrintGCTimeStamps -XX:SurvivorRatio=8 -XX:+UseCompressedClassPointers -XX:+UseCompressedOops -XX:+UseConcMarkSweepGC -XX:-UseLargePagesIndividualAllocation -XX:+UseParNewGC 
+0.182: [GC (Allocation Failure) 0.182: [ParNew: 7073K->925K(9216K), 0.0022329 secs] 11169K->9119K(19456K), 0.0067072 secs] [Times: user=0.00 sys=0.01, real=0.01 secs] 
+Heap
+ par new generation   total 9216K, used 5368K [0x00000000fec00000, 0x00000000ff600000, 0x00000000ff600000)
+  eden space 8192K,  54% used [0x00000000fec00000, 0x00000000ff056b70, 0x00000000ff400000)
+  from space 1024K,  90% used [0x00000000ff500000, 0x00000000ff5e7760, 0x00000000ff600000)
+  to   space 1024K,   0% used [0x00000000ff400000, 0x00000000ff400000, 0x00000000ff500000)
+ concurrent mark-sweep generation total 10240K, used 8194K [0x00000000ff600000, 0x0000000100000000, 0x0000000100000000)
+ Metaspace       used 3335K, capacity 4496K, committed 4864K, reserved 1056768K
+  class space    used 364K, capacity 388K, committed 512K, reserved 1048576K

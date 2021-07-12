@@ -46,37 +46,4 @@ public class UserServiceImpl extends ServiceImpl<UserDao, User> implements UserS
         List<User> list = super.list(queryWrapper);
         return CollectionUtil.isNotEmpty(list);
     }
-
-    public static void main(String[] args) {
-        getDataDigest();
-    }
-
-    private static void getDataDigest() {
-        String token = "0be2f1dfae1e18ee585fb19a42847760";
-        String xml = "<GetProductList>\n" +
-                "    <User>maggie.zheng@vantop.com</User>\n" +
-                "    <RequestTime>2021-05-11 15:45:44</RequestTime>\n" +
-                "    <PageNumber>1</PageNumber>\n" +
-                "    <ItemsPerPage>200</ItemsPerPage>\n" +
-                "    <GetProductListRequest/>\n" +
-                "</GetProductList>";
-        String leftToken = token.substring(0, 16);
-        String rightToken = token.substring(16);
-        String sign = DigestUtil.md5Hex(leftToken + xml + rightToken);
-        System.out.println(sign);
-    }
-
-    private static void getDataDigest2() {
-        String token = "1341a610bff0840f16f0de15b43f4b1d";
-        String xml = "<GetProductList>\n" +
-                "    <User>295544925@qq.com</User>\n" +
-                "    <RequestTime>2021-05-12 14:22:31</RequestTime>\n" +
-                "    <PageNumber>1</PageNumber>\n" +
-                "    <ItemsPerPage>10</ItemsPerPage>\n" +
-                "</GetProductList>";
-        String leftToken = token.substring(0, 16);
-        String rightToken = token.substring(16);
-        String sign = DigestUtil.md5Hex(leftToken + xml + rightToken);
-        System.out.println(sign);
-    }
 }
