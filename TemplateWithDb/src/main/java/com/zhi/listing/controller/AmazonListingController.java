@@ -1,6 +1,7 @@
 package com.zhi.listing.controller;
 
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
+import com.zhi.listing.model.dp.ListingId;
 import com.zhi.listing.model.form.AmazonListingPageForm;
 import com.zhi.listing.model.vo.ListingPageVo;
 import com.zhi.listing.service.AmazonListingService;
@@ -28,7 +29,7 @@ public class AmazonListingController {
     @PostMapping("/removeMatchSku")
     public Boolean removeMatchSku(@RequestBody Long id) {
         log.info("请求{}方法，{}，请求参数:{}", "removeMatchSku", "解除匹配", id);
-        Boolean result = amazonListingService.removeMatchSku(id, -1L);
+        Boolean result = amazonListingService.removeMatchSku(new ListingId(id), -1L);
         return result;
     }
 }

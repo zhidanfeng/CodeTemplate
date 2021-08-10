@@ -5,6 +5,7 @@ import com.baomidou.mybatisplus.core.conditions.update.LambdaUpdateWrapper;
 import com.baomidou.mybatisplus.core.toolkit.Wrappers;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.zhi.listing.mapper.WalmartListingMapper;
+import com.zhi.listing.model.dp.ListingId;
 import com.zhi.listing.model.entity.BaseListing;
 import com.zhi.listing.model.entity.WalmartListing;
 import com.zhi.listing.model.form.ListingPageForm;
@@ -50,12 +51,13 @@ public class WalmartListingServiceImpl extends ListingTemplateService<WalmartLis
         walmartListingPageVo.setWalmartField("walmart");
         list.add(walmartListingPageVo);
         pageResult.setRecords(new ArrayList<>(list));
+        ListingId listingId = new ListingId(null);
         return pageResult;
     }
 
     @Override
-    public Boolean removeMatchSku(Long key, Long tenantId) {
-        return super.removeMatchSku(key, tenantId, 1);
+    public Boolean removeMatchSku(ListingId id, Long tenantId) {
+        return super.removeMatchSku(id.getValue(), tenantId, 1);
     }
 
     @Override

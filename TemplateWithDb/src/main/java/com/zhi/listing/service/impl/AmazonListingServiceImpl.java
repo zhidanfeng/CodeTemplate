@@ -3,6 +3,7 @@ package com.zhi.listing.service.impl;
 import com.baomidou.mybatisplus.core.conditions.Wrapper;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.zhi.listing.mapper.AmazonListingMapper;
+import com.zhi.listing.model.dp.ListingId;
 import com.zhi.listing.model.entity.AmazonListing;
 import com.zhi.listing.model.entity.BaseListing;
 import com.zhi.listing.model.form.ListingPageForm;
@@ -26,8 +27,8 @@ public class AmazonListingServiceImpl extends ListingTemplateService<AmazonListi
     }
 
     @Override
-    public Boolean removeMatchSku(Long key, Long tenantId) {
-        return super.removeMatchSku(key, tenantId, 2);
+    public Boolean removeMatchSku(ListingId id, Long tenantId) {
+        return super.removeMatchSku(id.getValue(), tenantId, 2);
     }
 
     @Override

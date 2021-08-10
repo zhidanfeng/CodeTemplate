@@ -1,6 +1,7 @@
 package com.zhi.listing.controller;
 
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
+import com.zhi.listing.model.dp.ListingId;
 import com.zhi.listing.model.form.WalmartListingPageForm;
 import com.zhi.listing.model.vo.ListingPageVo;
 import com.zhi.listing.service.WalmartListingService;
@@ -29,7 +30,7 @@ public class WalmartListingController {
     @PostMapping("/removeMatchSku")
     public Boolean removeMatchSku(@RequestBody Long id) {
         log.info("请求{}方法，{}，请求参数:{}", "removeMatchSku", "解除匹配", id);
-        Boolean result = walmartListingService.removeMatchSku(id, -1L);
+        Boolean result = walmartListingService.removeMatchSku(new ListingId(id), -1L);
         return result;
     }
 }

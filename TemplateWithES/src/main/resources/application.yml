@@ -68,3 +68,8 @@ spring:
 mybatis-plus:
   # mapper配置文件路径，不填会报错：invalid bound statement (not found)
   mapper-locations: classpath:dao/*.xml
+elasticsearch:
+  host: 172.24.13.11
+  port: 9200
+  username: elastic
+  password: NxcZwm2ukEo80t6I
