@@ -10,8 +10,12 @@ public class Producer {
     @Autowired
     private KafkaTemplate<String,Object> kafkaTemplate;
 
+    @Autowired
+    private MyProducterListener myProducterListener;
+
     @GetMapping("/send")
     public void send(@RequestParam(value = "msg") String msg) {
+        kafkaTemplate.setProducerListener(myProducterListener);
         kafkaTemplate.send("kafka_demo01", msg);
     }
 }

@@ -1,26 +1,25 @@
 package com.zhi.mq.kafka.demo01;
 
-import org.apache.commons.lang3.StringUtils;
+import cn.hutool.core.util.StrUtil;
 import org.apache.kafka.clients.consumer.ConsumerRecord;
 import org.springframework.kafka.annotation.KafkaListener;
 import org.springframework.kafka.support.Acknowledgment;
-import org.springframework.stereotype.Component;
 
 import java.util.List;
 
-@Component
-public class Consumer {
+//@Component
+public class Consumer02 {
 
-    @KafkaListener(id = "kafka_demo01",
+    @KafkaListener(id = "kafka_demo01_2",
             topics = "kafka_demo01",
-            groupId = "kafka_demo01_group",
+            groupId = "kafka_demo01_group_2",
             containerFactory = "manualImmediateListenerContainerFactory")
     public void receiveListener(List<ConsumerRecord<String, String>> records, Acknowledgment ack) {
         for (ConsumerRecord<String, String> record : records) {
             String value = record.value();
-            System.out.println("收到消息：" + value);
+            System.out.println("Consumer02收到消息：" + value);
 
-            if (value.contains("kafka3")) {
+            if (StrUtil.isNotBlank(value) && value.contains("kafka3")) {
                 throw new RuntimeException("处理kafka消息时出现异常");
             }
         }
