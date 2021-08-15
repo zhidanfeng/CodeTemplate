@@ -23,7 +23,7 @@ public class OrderlyProducer {
         kafkaTemplate.setProducerListener(myProducterListener);
         System.out.println(orderly ? "有序消息" : "乱序消息");
         for (int i = 0; i < 4; i++) {
-            // 要保证消息的有序性，只能将消息发往同一个分区
+            // 要保证消息的有序性，需要保证只有1个消费者组，并且只能将消息发往同一个分区
             kafkaTemplate.send("kafka_demo01", orderly ? 0 : i % 3, String.valueOf(i), msg + i);
         }
     }
